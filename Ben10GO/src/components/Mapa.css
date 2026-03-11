@@ -1,0 +1,11 @@
+.mapa{
+    max-width: 70vw;
+    margin: 1rem;
+    padding: 12px;
+}
+
+.mapaContainer{
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
