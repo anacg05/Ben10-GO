@@ -9,3 +9,58 @@
     height: 350px;
     overflow: hidden;
 }
+
+.painel{
+    background: #fffdfd;
+    border: 1px  #010a41 solid;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 12px;
+}
+
+.painelTopo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.vazio{
+    color: blue;
+}
+
+.botao{
+    background: #101f70;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.botao:hover{
+    background: #010a41;
+    text-decoration: none;
+}
+
+.listaPontos{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pontos{
+    display: grid;
+    grid-template-columns: 48px 1fr 130px;
+    gap: 10px;
+    align-items: center;
+    padding: 6px 0;
+    border-top: gray 1px dashed;
+
+}
+
+.dist{
+    text-align: right;
+    color: #101f70;
+    font-weight: bolder;
+}
