@@ -66,61 +66,62 @@ export default function CaixaQuestoes({ question, index, total, onClose, onCorre
 
                     <button ref={closeBtnRef} type="button" className="btnFecha" aria-label={`Fechar pergunta: ${question.titulo}`} onClick={onClose}></button>
                 </header>
-            </div>
 
-            <div className="dialog-card">
-                <p className="question-prompt">{question.prompt}</p>
 
-                <form className="question-form" onSubmit={handleSubmit}>
-                    <label htmlFor="resposta" className="question-label">
-                        Sua resposta:
-                    </label>
-                    <input
-                        id="resposta"
-                        className="question-input"
-                        type="text"
-                        autoComplete="off"
-                        aria-describedby="feedback"
-                        aria-invalid={feedback.type === "error" ? "true" : "false"}
-                        value={resposta}
-                        onChange={(e) => setReposta(e.target.value)}
-                        disabled={isCorrect}
-                        placeholder="Escreva sua resposta aqui"
+                <div className="dialog-card">
+                    <p className="question-prompt">{question.prompt}</p>
 
-                    />
+                    <form className="question-form" onSubmit={handleSubmit}>
+                        <label htmlFor="resposta" className="question-label">
+                            Sua resposta:
+                        </label>
+                        <input
+                            id="resposta"
+                            className="question-input"
+                            type="text"
+                            autoComplete="off"
+                            aria-describedby="feedback"
+                            aria-invalid={feedback.type === "error" ? "true" : "false"}
+                            value={resposta}
+                            onChange={(e) => setReposta(e.target.value)}
+                            disabled={isCorrect}
+                            placeholder="Escreva sua resposta aqui"
 
-                    <div id="feedback" className={`question-feedback question-feedback--${feedback.type}`}
-                        aria-live="polite">
-                        {feedback.msg}
-                    </div>
+                        />
 
-                    {!isCorrect ? (
-                        <div className="question-actions">
-                            <button type="submit" className="btn btn-primary">
-                                Confirmar
-                            </button>
-                            <button type="button" className="btn" onClick={onClose}>
-                                Voltar
-                            </button>
+                        <div id="feedback" className={`question-feedback question-feedback--${feedback.type}`}
+                            aria-live="polite">
+                            {feedback.msg}
                         </div>
-                    ) : (
-                        <div className="question-actions">
-                            <button
-                                type="button"
-                                className="btn btn-success"
-                                onClick={() => {
-                                    onCorrect(question.id)
-                                    onClose();
-                                }}
-                                aria-label="Avançar para a próxima pergunta">
-                                Avançar
-                            </button>
-                        </div>
-                    )}
-                </form>
 
-                {question.dica && <p className="question-hint"> Dica: {question.dica}</p>}
+                        {!isCorrect ? (
+                            <div className="question-actions">
+                                <button type="submit" className="btn btn-primary">
+                                    Confirmar
+                                </button>
+                                <button type="button" className="btn" onClick={onClose}>
+                                    Voltar
+                                </button>
+                            </div>
+                        ) : (
+                            <div className="question-actions">
+                                <button
+                                    type="button"
+                                    className="btn btn-success"
+                                    onClick={() => {
+                                        onCorrect(question.id)
+                                        onClose();
+                                    }}
+                                    aria-label="Avançar para a próxima pergunta">
+                                    Avançar
+                                </button>
+                            </div>
+                        )}
+                    </form>
 
+                    {question.dica && <p className="question-hint"> Dica: {question.dica}</p>}
+
+                </div>
             </div>
         </>
     )

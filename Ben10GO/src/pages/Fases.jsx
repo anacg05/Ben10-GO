@@ -4,6 +4,8 @@ import { useMemo, useState } from 'react'
 
 import GridIcon from '../components/GridIcon'
 import CaixaQuestoes from '../components/CaixaQuestoes'
+import './Fases.css';
+import '../index.css';
 
 
 export default function Fases(){

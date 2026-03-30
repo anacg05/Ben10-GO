@@ -8,7 +8,7 @@ export default function IconButton({
     const dialogId = 'dialog-${question.id}'
     const baseIcon = <q>question.icon ?? "/gato_cachorro.png"</q>
 
-    const icon = locked ? "locked.png" : solved? "check.png" : baseIcon
+    const icon = locked ? "locked.png" : solved? "unlocked.png" : baseIcon
     const aria = locked
     ? `${question.titulo} (bloqueado, resolva a anterior para proseguir)` : solved
     ? `${question.titulo} (resolvida)` : `${question.titulo} (disponivel)`
