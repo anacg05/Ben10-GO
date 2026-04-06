@@ -3,33 +3,41 @@ export default function IconButton({
     onOpen,
     locked,
     solved
-}){
+}) {
+    const dialogId = `dialog-${question.id}`
+    const iconeOmnitrix = `../../public/${question.icon}`
+    const imagemAlien = `../../src/assets/images/${question.imagem}`
+    
+    const imagemAtual = solved ? imagemAlien : iconeOmnitrix
+    
+    const ariaInfo = locked
+        ? `${question.titulo} (bloqueado, resolva a anterior para prosseguir)`
+        : solved
+        ? `${question.titulo} (resolvida)`
+        : `${question.titulo} (disponível)`
 
-    const dialogId = 'dialog-${question.id}'
-    const baseIcon = <q>question.icon ?? "/gato_cachorro.png"</q>
-
-    const icon = locked ? "locked.png" : solved? "unlocked.png" : baseIcon
-    const aria = locked
-    ? `${question.titulo} (bloqueado, resolva a anterior para proseguir)` : solved
-    ? `${question.titulo} (resolvida)` : `${question.titulo} (disponivel)`
-
-    return(
-        <li className="iconGrid-item"> 
-            <button type="button" className={`icon-button${locked? "icon-button--locked" : ""} ${solved? "icon-button--solved" : "" }`}
-                aria-haspopup = "dialog"
-                aria-controls = {dialogId}
-                aria-label = {aria}
+    return (
+        <li className="iconGridItem"> 
+            <button
+                type="button"
+                className={`iconButton ${locked ? "iconButtonLocked" : ""} ${solved ? "iconButtonSolved" : ""}`}
+                aria-haspopup="dialog"
+                aria-controls={dialogId}
+                aria-label={ariaInfo}
                 onClick={() => onOpen(question)}
-                disabled = {locked}
-                aria-disabled = {locked || undefined}
+                disabled={locked}
+                aria-disabled={locked || undefined}
             > 
-                <figure>
-                    <img src="../../public/locked.png" alt={icon} aria-hidden = "true"  />
-                    <span className="visually-hidden">{question.titulo}</span>
+                <figure className="iconFigure">
+                    <img
+                        src={imagemAtual}
+                        alt={ariaInfo}
+                        aria-hidden="true"
+                        className={`iconButtonImg ${solved ? "imgAlienRevealed" : ""}`}
+                    />
+                    <span className="visuallyHidden">{question.titulo}</span>
                 </figure>
             </button>
         </li>
     )
-
-
 }

@@ -3,48 +3,60 @@
     "id": "Q1",
     "titulo": "Nível 1 - Conhecimento Básico",
     "prompt": "Qual destes alienígenas é cego e utiliza um olfato e audição super apurados como radar?",
-    "resposta": ["Besta"],
+    "opcoes": ["Chama", "Besta", "Quatro Braços", "Diamante"],
+    "resposta": "Besta",
     "dica": "Assemelha-se a um grande cão laranja e não tem olhos visíveis.",
-    "icon": "3.png"
+    "icon": "3.png",
+    "imagem": "img3.png"
   },
   {
     "id": "Q2",
     "titulo": "Nível 2 - Biologia Alienígena",
     "prompt": "O corpo do alienígena Diamante é composto por cristais quase indestrutíveis. Que tipo de substância é essa?",
-    "resposta": ["Tadenita", "Cristal", "Diamante"],
+    "opcoes": ["Tadenita", "Ferro", "Cristal de Quartzo", "Obsidiana"],
+    "resposta": "Tadenita",
     "dica": "É um dos minerais mais resistentes de toda a galáxia.",
-    "icon": "6.png"
+    "icon": "4.png",
+    "imagem": "img4.png"
   },
   {
     "id": "Q3",
     "titulo": "Nível 3 - Anatomia",
     "prompt": "Além de ter asas e um ferrão, quantos olhos tem o Insectóide no total?",
-    "resposta": ["Quatro", "4"],
+    "opcoes": ["Dois", "Quatro", "Seis", "Oito"],
+    "resposta": "Quatro",
     "dica": "Ele tem o mesmo número de olhos que o Quatro Braços tem de braços.",
-    "icon": "5.png"
+    "icon": "6.png",
+    "imagem": "img6.png"
   },
   {
     "id": "Q4",
     "titulo": "Nível 4 - Habilidades Especiais",
     "prompt": "Qual é o alienígena conhecido pela sua velocidade extrema, que se movimenta sobre esferas nos pés?",
-    "resposta": ["XLR8"],
+    "opcoes": ["Fantasmático", "XLR8", "Ultra T", "Massa Cinzenta"],
+    "resposta": "XLR8",
     "dica": "O seu nome soa como a palavra 'acelerar'.",
-    "icon": "4.png"
+    "icon": "7.png",
+    "imagem": "img7.png"
   },
   {
     "id": "Q5",
     "titulo": "Nível 5 - Origens",
     "prompt": "A raça do Quatro Braços (os Tetramandos) é originária de um planeta com um vasto deserto vermelho. Como se chama esse planeta?",
-    "resposta": ["Khoros"],
+    "opcoes": ["Khoros", "Vilgaxia", "Galvan Prime", "Pyros"],
+    "resposta": "Khoros",
     "dica": "O nome do planeta começa com a letra 'K'.",
-    "icon": "7.png"
+    "icon": "8.png",
+    "imagem": "img8.png"
   },
   {
     "id": "Q6",
     "titulo": "Nível 6 - Fraquezas",
     "prompt": "O que acontece se o alienígena Chama for atingido por uma grande quantidade de água ou pó extintor?",
-    "resposta": ["Apaga", "Fica fraco", "Perde os poderes"],
+    "opcoes": ["Ganha mais força", "Perde os poderes", "Fica mais rápido", "Multiplica-se"],
+    "resposta": "Perde os poderes",
     "dica": "Pense no que acontece quando atira água para uma fogueira.",
-    "icon": "2.png"
+    "icon": "5.png",
+    "imagem": "img5.png"
   }
 ]

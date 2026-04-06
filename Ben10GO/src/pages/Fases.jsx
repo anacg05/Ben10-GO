@@ -1,12 +1,9 @@
 import Perguntas from '../../public/data/perguntas.json'
-
 import { useMemo, useState } from 'react'
-
-import GridIcon from '../components/GridIcon'
-import CaixaQuestoes from '../components/CaixaQuestoes'
+import Mapa from '../components/Mapa/Mapa.jsx';
+import CaixaQuestoes from '../components/CaixaQuestoes/CaixaQuestoes.jsx';
 import './Fases.css';
 import '../index.css';
-
 
 export default function Fases(){
     const [selecionada, setSelec] = useState(null);
@@ -37,28 +34,29 @@ export default function Fases(){
 
     return(
         <main className='app'>
-            <header>
-                <h1>Ben10 GO</h1>
-
+            <header className='appHeader'>
+                <div className='headerBrand'>
+                    <img src="../../src/assets/images/img1.png" alt="Logo Omnitrix" className="headerLogo" />
+                    <h1 className='headerTitle'>Ben 10 GO</h1>
+                </div>
+                
                 <section className='progress'>
-                <div 
-                    className = 'progess-bar'
-                    style = {{width: `${progresso.percent}%`}}
-                    role = "progressbar"
-                    aria-valuemin = {0}
-                    aria-valuemax = {100}
-                    aria-valuenow = {progresso.percent}
-                    aria-label = {`Progresso: ${progresso.solved} de ${progresso.total} resolvidas`}
-                />
-                <span className='progress-label'>{progresso.solved}/{progresso.total}</span>
-            </section>
+                    <div 
+                        className='progressBar'
+                        style={{width: `${progresso.percent}%`}}
+                        role="progressbar"
+                        aria-valuemin={0}
+                        aria-valuemax={100}
+                        aria-valuenow={progresso.percent}
+                        aria-label={`Progresso: ${progresso.solved} de ${progresso.total} resolvidas`}
+                    />
+                    <span className='progressLabel'>{progresso.solved}/{progresso.total}</span>
+                </section>
             </header>
 
-
-            <GridIcon 
+            <Mapa 
                 questions={Perguntas}
                 onOpen={handleOpen}
-                modalOpen={Boolean(selecionada)}
                 unlockedIndex={unlockedIndex}
                 solvedSet={solvedSet}
             />
@@ -69,7 +67,7 @@ export default function Fases(){
                     index={Perguntas.findIndex((q) => q.id === selecionada.id)}
                     total={total}
                     onClose={handleClose}
-                    onCorret={handleCorrect}
+                    onCorrect={handleCorrect}
                 />
             )}
         </main>
