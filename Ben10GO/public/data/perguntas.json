@@ -16,7 +16,7 @@
     "opcoes": ["Tadenita", "Ferro", "Cristal de Quartzo", "Obsidiana"],
     "resposta": "Tadenita",
     "dica": "É um dos minerais mais resistentes de toda a galáxia.",
-    "icon": "4.png",
+    "icon": "6.png",
     "imagem": "img4.png"
   },
   {
@@ -26,7 +26,7 @@
     "opcoes": ["Dois", "Quatro", "Seis", "Oito"],
     "resposta": "Quatro",
     "dica": "Ele tem o mesmo número de olhos que o Quatro Braços tem de braços.",
-    "icon": "6.png",
+    "icon": "5.png",
     "imagem": "img6.png"
   },
   {
@@ -36,7 +36,7 @@
     "opcoes": ["Fantasmático", "XLR8", "Ultra T", "Massa Cinzenta"],
     "resposta": "XLR8",
     "dica": "O seu nome soa como a palavra 'acelerar'.",
-    "icon": "7.png",
+    "icon": "4.png",
     "imagem": "img7.png"
   },
   {
@@ -46,7 +46,7 @@
     "opcoes": ["Khoros", "Vilgaxia", "Galvan Prime", "Pyros"],
     "resposta": "Khoros",
     "dica": "O nome do planeta começa com a letra 'K'.",
-    "icon": "8.png",
+    "icon": "7.png",
     "imagem": "img8.png"
   },
   {
@@ -56,7 +56,7 @@
     "opcoes": ["Ganha mais força", "Perde os poderes", "Fica mais rápido", "Multiplica-se"],
     "resposta": "Perde os poderes",
     "dica": "Pense no que acontece quando atira água para uma fogueira.",
-    "icon": "5.png",
+    "icon": "2.png",
     "imagem": "img5.png"
   }
 ]

@@ -56,13 +56,13 @@ export default function Mapa({ questions, onOpen, unlockedIndex, solvedSet }) {
 
     const criarIcone = (question, locked, solved, zoom) => {
         const iconeOmnitrix = `../../public/${question.icon}`;
-        const imagemAlien = `../../src/assets/images/${question.imagem || 'img7.png'}`; 
+        const imagemAlien = `../../src/assets/images/${question.imagem || 'img7.png'}`;
         const imagemAtual = solved ? imagemAlien : iconeOmnitrix;
 
         const containerClass = solved ? 'mapIcon mapIconSolved' : (locked ? 'mapIcon mapIconLocked' : 'mapIcon');
         const imgClass = solved ? 'mapIconImg imgAlienRevealed' : 'mapIconImg';
 
-        const tamanhoCalculado = Math.max(64, 210 * Math.pow(1.5, zoom - 18));
+        const tamanhoCalculado = Math.max(64, 256 * Math.pow(1.5, zoom - 18));
         const centro = tamanhoCalculado / 2;
 
         return L.divIcon({
@@ -71,7 +71,7 @@ export default function Mapa({ questions, onOpen, unlockedIndex, solvedSet }) {
                     <img src="${imagemAtual}" class="${imgClass}" alt="${question.titulo}" />
                 </div>
             `,
-            className: '', 
+            className: '',
             iconSize: [tamanhoCalculado, tamanhoCalculado],
             iconAnchor: [centro, centro]
         });
@@ -82,7 +82,7 @@ export default function Mapa({ questions, onOpen, unlockedIndex, solvedSet }) {
             {erro && <div className='mapaErro'>{erro}</div>}
 
             <MapContainer
-                center={[baseLat, baseLng]}
+                center={[-22.9142, -47.0684]}
                 zoom={18}
                 scrollWheelZoom={true}
                 className='mapaContainer'
@@ -90,7 +90,8 @@ export default function Mapa({ questions, onOpen, unlockedIndex, solvedSet }) {
             >
                 <ZoomTracker onZoom={setZoomAtual} />
                 <TileLayer
-                    url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+                    url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
                 />
 
                 {posicao && (
@@ -102,13 +103,13 @@ export default function Mapa({ questions, onOpen, unlockedIndex, solvedSet }) {
                 {questions.map((q, idx) => {
                     const locked = idx > unlockedIndex;
                     const solved = solvedSet.has(q.id);
-                    
+
                     const qLat = baseLat + (offsets[idx]?.lat || 0);
                     const qLng = baseLng + (offsets[idx]?.lng || 0);
 
                     return (
-                        <Marker 
-                            key={q.id} 
+                        <Marker
+                            key={q.id}
                             position={[qLat, qLng]}
                             icon={criarIcone(q, locked, solved, zoomAtual)}
                             eventHandlers={{
