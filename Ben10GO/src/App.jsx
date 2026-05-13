@@ -1,8 +1,5 @@
 import React from 'react';
-
-// import Mapa from './components/Mapa';
 import Fases from './pages/Fases';
-//import './App.css';
 
 function App() {
   return(
